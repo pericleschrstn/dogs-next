@@ -3,6 +3,9 @@
 import login from "@/actions/login";
 import { useFormState, useFormStatus } from "react-dom";
 import Button from "@/components/forms/button";
+import Input from "@/components/forms/input";
+import ErrorMessage from "@/components/helper/error-message";
+import React from "react";
 
 function ButtonForm() {
   const { pending } = useFormStatus();
@@ -16,13 +19,18 @@ export default function LoginForm() {
     error: "",
     data: null,
   });
+
+  React.useEffect(() => {
+    if (state.ok) window.location.href = "/conta";
+  }, [state.ok]);
+
   return (
     <>
       <form action={action}>
-        <input type="text" placeholder="usuário" name="username" />
-        <input type="password" placeholder="senha" name="password" />
+        <Input label="Usuário" name="username" type="text" />
+        <Input label="Senha" name="password" type="password" />
+        <ErrorMessage error={state.error} />
         <ButtonForm />
-        <p>{state.error}</p>
       </form>
     </>
   );
