@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default async function LoginPage() {
   return (
-    <div>
+    <div className="animeLeft">
       <h1 className="title">Login</h1>
       <LoginForm />
     </div>

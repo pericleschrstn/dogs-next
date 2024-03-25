@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 export default async function CriarPage() {
   return (
-    <main>
-      <h1>Criar</h1>
+    <div className="animeLeft">
+      <h1 className="title">Cadastre-se</h1>
       <LoginCriarForm />
-    </main>
+    </div>
   );
 }
