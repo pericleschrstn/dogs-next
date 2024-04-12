@@ -10,7 +10,7 @@ type IUserContext = {
 type User = {
   id: number;
   email: string;
-  name: string;
+  nome: string;
   username: string;
 };
 
