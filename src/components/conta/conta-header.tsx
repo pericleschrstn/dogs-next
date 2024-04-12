@@ -9,6 +9,8 @@ import styles from "@/components/conta/conta-header.module.css";
 import useMedia from "@/hooks/use-media";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import logout from "@/actions/logout";
+import { useUser } from "@/context/user-context";
 
 function getTitle(pathname: string) {
   switch (pathname) {
@@ -26,8 +28,10 @@ export default function ContaHeader() {
   const [mobileMenu, setMobileMenu] = React.useState(false);
   const pathname = usePathname();
 
-  function handleLogout() {
-    // userLogout();
+  const { setUserContext } = useUser();
+  async function handleLogout() {
+    await logout();
+    setUserContext(null);
   }
 
   React.useEffect(() => {
