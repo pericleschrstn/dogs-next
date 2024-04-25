@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import style from "@/components/feed/feed-photos.module.css";
 
-export default async function FeedPhotos({ photos }: { photos: Photo[] }) {
+export default function FeedPhotos({ photos }: { photos: Photo[] }) {
   return (
     <ul className={`${style.feed} animeLeft`}>
       {photos.map((photo, i) => (
