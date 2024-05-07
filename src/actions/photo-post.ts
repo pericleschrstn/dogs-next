@@ -14,7 +14,7 @@ export default async function photoPost(state: {}, formData: FormData) {
   const img = formData.get("img") as File;
 
   try {
-    if (!nome || !peso || !idade || img.size === 0) throw new Error("Preencha os dados");
+    if (!token || !nome || !peso || !idade || img.size === 0) throw new Error("Preencha os dados");
     const { url } = PHOTO_POST();
     const response = await fetch(url, {
       method: "POST",
