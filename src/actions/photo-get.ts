@@ -13,7 +13,7 @@ export type Comment = {
 
 export type PhotoData = {
   photo: Photo;
-  comment: Comment[];
+  comments: Comment[];
 };
 
 export default async function photoGet(id: string) {
